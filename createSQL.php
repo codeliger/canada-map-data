@@ -13,6 +13,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 require('vendor/autoload.php');
 require('functions/GMLtoSQL.php');
+require('functions/CanadaGMLtoSQL.php');
 require('functions/KMLtoSQL.php');
 
 // since we arent using a database we must define our own escape function
@@ -35,7 +36,7 @@ define('MAPLEVEL_ELECTORALDISTRICT',5);
 // GMLtoSQL('gml/canada/populationcentre.gml','sql/Canada_PopulationCentre.sql',MAPLEVEL_CITYORMUNICIPALITY,'PCNAME'); # Population Centres (1000 or more people)
 // GMLtoSQL('gml/canada/electoraldistrict.gml','sql/Canada_FederalElectionDistrict.sql',MAPLEVEL_ELECTORALDISTRICT,'FEDNAME'); # Federal Election Districts
 // GMLtoSQL('gml/canada/postalcode.gml','sql/Canada_PostalCode.sql',MAPLEVEL_POSTALCODE,'CFSAUID'); # First 3 digits of postal code
-GMLtoSQL('gml/canada/country.gml','sql/Canada.sql',MAPLEVEL_COUNTRY,'NAME');
+CanadaGMLtoSQL('gml/canada/country.gml','sql/Canada.sql',MAPLEVEL_COUNTRY,'NAME');
 
 // KMLtoSQL('gml/usa/cb_2016_us_nation_20m.kml','sql/usa_nation.sql',MAPLEVEL_COUNTRY,'SimpleData','NAME'); // Country
 // KMLtoSQL('gml/usa/cb_2016_us_state_20m.kml','sql/usa_state.sql',MAPLEVEL_STATEORPROVINCE,'SimpleData','NAME'); // States
